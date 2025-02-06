@@ -15,7 +15,7 @@ A Chrome extension that automatically updates AWS Console URLs to your preferred
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/chrome-url-changer.git
+git clone https://github.com/TingyuShare/chrome-url-changer.git
 cd chrome-url-changer
 ```
 
