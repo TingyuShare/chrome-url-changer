@@ -1,5 +1,5 @@
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    if (changeInfo.status === 'complete' && tab.url?.startsWith('http')) {
+    if (changeInfo.status === 'complete' && tab.url?.startsWith('http') && !tab.url.includes('wafv2')) {
       try {
         // 检查是否是 *.console.amazonaws.cn 域名
         const url = new URL(tab.url);
