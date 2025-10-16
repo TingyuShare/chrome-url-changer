@@ -9,8 +9,8 @@ const allRegionsRegex = new RegExp(`(${allRegions.join('|')})`, 'g');
 const globalServicePaths = ['/iam/', '/cloudfront/', '/s3/', '/route53/', '/trustedadvisor/'];
 
 const redirectionTracker: { [tabId: number]: number[] } = {};
-const LOOP_THRESHOLD_COUNT = 2; // 2 redirects
-const LOOP_THRESHOLD_TIME = 5000; // in 5 seconds
+const LOOP_THRESHOLD_COUNT = 3; // 3 redirects
+const LOOP_THRESHOLD_TIME = 2000; // in 2 seconds
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     if (changeInfo.status !== 'complete' || !tab.url || !tab.url.startsWith('http')) {
