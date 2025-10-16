@@ -5,20 +5,79 @@
   <script src="popup.js" defer></script>
   <style>
     body {
-      min-width: 200px;
+      font-family: sans-serif;
+      min-width: 250px;
       padding: 10px;
     }
-    #content {
-      margin-top: 10px;
+    .region-group {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
+    .region-group label {
+      margin-right: 10px;
+      width: 50px; /* Align labels */
+    }
+    .region-group select {
+      flex-grow: 1;
+    }
+    #status {
+      margin-top: 12px;
+      padding: 8px;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .controls {
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
-  <select id="regionSelector">
-    <option value="cn-north-1">cn-north-1</option>
-    <option value="cn-northwest-1">cn-northwest-1</option>
-  </select>
-  <button id="save">Save</button>
-  <div id="content"></div>
+  <h4>AWS Region Changer</h4>
+
+  <div class="region-group">
+    <label for="chinaRegionSelector">China:</label>
+    <select id="chinaRegionSelector">
+      <option value="cn-north-1">cn-north-1</option>
+      <option value="cn-northwest-1">cn-northwest-1</option>
+    </select>
+  </div>
+
+  <div class="region-group">
+    <label for="globalRegionSelector">Global:</label>
+    <select id="globalRegionSelector">
+      <option value="us-east-1">us-east-1</option>
+      <option value="us-east-2">us-east-2</option>
+      <option value="us-west-1">us-west-1</option>
+      <option value="us-west-2">us-west-2</option>
+      <option value="af-south-1">af-south-1</option>
+      <option value="ap-east-1">ap-east-1</option>
+      <option value="ap-south-1">ap-south-1</option>
+      <option value="ap-northeast-3">ap-northeast-3</option>
+      <option value="ap-northeast-2">ap-northeast-2</option>
+      <option value="ap-southeast-1">ap-southeast-1</option>
+      <option value="ap-southeast-2">ap-southeast-2</option>
+      <option value="ap-northeast-1">ap-northeast-1</option>
+      <option value="ca-central-1">ca-central-1</option>
+      <option value="eu-central-1">eu-central-1</option>
+      <option value="eu-west-1">eu-west-1</option>
+      <option value="eu-west-2">eu-west-2</option>
+      <option value="eu-south-1">eu-south-1</option>
+      <option value="eu-west-3">eu-west-3</option>
+      <option value="eu-north-1">eu-north-1</option>
+      <option value="me-south-1">me-south-1</option>
+      <option value="sa-east-1">sa-east-1</option>
+    </select>
+  </div>
+
+  <div class="controls">
+    <label>
+      <input type="checkbox" id="disableSwitch"> Disable Redirection
+    </label>
+  </div>
+
+  <div id="status"></div>
+
 </body>
 </html>

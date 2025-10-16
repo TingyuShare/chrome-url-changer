@@ -3,7 +3,7 @@
     "name": "Region URL Changer",
     "version": "1.1",
     "description": "Change AWS Console URL based on user selection",
-    "permissions": ["tabs", "storage"],
+    "permissions": ["tabs", "storage", "notifications"],
     "action": {
       "default_popup": "popup.html",
       "default_icon": {
